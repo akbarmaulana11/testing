@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "854042325048",
+    "project_id": "chat-project-amd-11",
+    "storage_bucket": "chat-project-amd-11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854042325048:android:6181ab324163be183b76cd",
+        "android_client_info": {
+          "package_name": "com.akma.chattingan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854042325048-d9sed5rju0e0svq7734qnj9q5cmf1445.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akma.chattingan",
+            "certificate_hash": "1e48d3250574720cc38d1a4901595219b0b196f6"
+          }
+        },
+        {
+          "client_id": "854042325048-fg3iajm7fo4c1pq1ke09cavuvbtf5pud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUl5j68ersc9FMiUhzQq9MidAZM7ReacU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854042325048-fg3iajm7fo4c1pq1ke09cavuvbtf5pud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

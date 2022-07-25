@@ -1,5 +1,6 @@
 import 'package:chattingan/components/button/button_custom.dart';
 import 'package:chattingan/constants.dart';
+import 'package:chattingan/screens/auth_login/phone_number_auth_page.dart';
 import 'package:chattingan/screens/chats/chats_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,8 @@ class AuthLoginPage extends StatelessWidget {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChatsScreenPage()),
+                    MaterialPageRoute(
+                        builder: (context) => PhoneNumberAuthenticatorPage()),
                   );
                   print("Login : $context");
                 },
