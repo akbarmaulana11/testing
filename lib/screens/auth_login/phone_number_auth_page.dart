@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:chattingan/components/button/button_custom.dart';
 import 'package:chattingan/constants.dart';
+import 'package:chattingan/screens/chats/chats_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,8 @@ class PhoneNumberAuthenticatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final inputController = TextEditingController();
     FirebaseAuth fauth = FirebaseAuth.instance;
-    TextEditingController InputPhoneController = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -33,6 +34,9 @@ class PhoneNumberAuthenticatorPage extends StatelessWidget {
                     if (snapshoot.hasData) {
                       return Text(
                           'Sign In with ${snapshoot.data?.phoneNumber}');
+                      // return Scaffold(
+                      //   body: ChatsScreenPage(),
+                      // );
                       // to the next page, when you after verify the phone number....
                     }
                     return Text('Kamu, mesti login dulu...');
@@ -48,7 +52,10 @@ class PhoneNumberAuthenticatorPage extends StatelessWidget {
                 child: TextField(
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.phone,
-                  controller: InputPhoneController,
+                  controller: inputController,
+                  onChanged: (text) {
+                    print(text);
+                  },
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: 'Phone Number'),
                 ),
@@ -60,7 +67,7 @@ class PhoneNumberAuthenticatorPage extends StatelessWidget {
                   onPressed: () async {
                     if (fauth.currentUser == null) {
                       await fauth.verifyPhoneNumber(
-                        phoneNumber: '',
+                        phoneNumber: "${inputController.text}",
                         verificationCompleted:
                             (PhoneAuthCredential credential) async {
                           await fauth.signInWithCredential(credential);
@@ -159,7 +166,7 @@ class PhoneNumberAuthenticatorPage extends StatelessWidget {
                       Navigator.pop(context, controller.text);
                     },
                     child: Text('Confirm',
-                        style: TextStyle(color: Colors.green.shade900)))
+                        style: TextStyle(color: kPrimaryColor))),
               ]);
         });
   }
